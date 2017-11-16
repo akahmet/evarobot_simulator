@@ -65,7 +65,7 @@ GazeboRosBumper::~GazeboRosBumper()
 // Load the controller
 void GazeboRosBumper::Load(sensors::SensorPtr _parent, sdf::ElementPtr _sdf)
 {
-  this->parentSensor = boost::dynamic_pointer_cast<sensors::ContactSensor>(_parent);
+  this->parentSensor = std::dynamic_pointer_cast<sensors::ContactSensor>(_parent);
   if (!this->parentSensor)
   {
     ROS_ERROR("Contact sensor parent is not of type ContactSensor");
